@@ -48,3 +48,24 @@ function calculateAverageRate(freelancers) {
   const total = freelancers.reduce((sum, f) => sum + f.rate, 0);
   return +(total / freelancers.length).toFixed(2);
 }
+// === Component: Freelancer Row ===
+/**
+ * Create a table row element for a freelancer
+ * @param {Freelancer} freelancer
+ * @returns {HTMLTableRowElement}
+ */
+function FreelancerRow(freelancer) {
+    const tr = document.createElement("tr");
+  
+    const tdName = document.createElement("td");
+    tdName.textContent = freelancer.name;
+  
+    const tdOccupation = document.createElement("td");
+    tdOccupation.textContent = freelancer.occupation;
+  
+    const tdRate = document.createElement("td");
+    tdRate.textContent = `$${freelancer.rate}`;
+  
+    tr.append(tdName, tdOccupation, tdRate);
+    return tr;
+  }
