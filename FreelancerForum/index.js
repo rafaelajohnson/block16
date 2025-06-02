@@ -80,3 +80,15 @@ function FreelancerRows() {
     freelancers.forEach(f => tbody.appendChild(FreelancerRow(f)));
     return tbody;
   }
+
+  // === Component: Average Rate Display ===
+/**
+ * Display the average rate in a <p> element
+ * @returns {HTMLParagraphElement}
+ */
+function AverageRateDisplay() {
+    const p = document.createElement("p");
+    p.innerHTML = `The average rate is <em>$${averageRate}</em>.`;
+    return p;
+  }
+  
