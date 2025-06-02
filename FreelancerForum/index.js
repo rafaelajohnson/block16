@@ -92,3 +92,29 @@ function AverageRateDisplay() {
     return p;
   }
   
+  // === Render Function ===
+function renderApp() {
+    const app = document.getElementById("app");
+    app.innerHTML = ""; // Clear existing content
+  
+    const h1 = document.createElement("h1");
+    h1.textContent = "Freelancer Forum";
+  
+    const avgDisplay = AverageRateDisplay();
+  
+    const table = document.createElement("table");
+  
+    const thead = document.createElement("thead");
+    thead.innerHTML = `
+      <tr>
+        <th>NAME</th>
+        <th>OCCUPATION</th>
+        <th>RATE</th>
+      </tr>
+    `;
+  
+    const tbody = FreelancerRows();
+  
+    table.append(thead, tbody);
+    app.append(h1, avgDisplay, table);
+  }
