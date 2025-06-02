@@ -118,3 +118,6 @@ function renderApp() {
     table.append(thead, tbody);
     app.append(h1, avgDisplay, table);
   }
+
+  // === Mount the app ===
+renderApp();
