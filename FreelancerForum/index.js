@@ -31,4 +31,20 @@ function getRandomRate(min, max) {
       rate: getRandomRate(PRICE_RANGE.min, PRICE_RANGE.max),
     };
   }
-  
+  // === State ===
+
+/** @type {Freelancer[]} */
+const freelancers = Array.from({ length: NUM_FREELANCERS }, generateFreelancer);
+
+/** @type {number} */
+const averageRate = calculateAverageRate(freelancers);
+
+/**
+ * Calculate the average rate of freelancers
+ * @param {Freelancer[]} freelancers
+ * @returns {number}
+ */
+function calculateAverageRate(freelancers) {
+  const total = freelancers.reduce((sum, f) => sum + f.rate, 0);
+  return +(total / freelancers.length).toFixed(2);
+}
